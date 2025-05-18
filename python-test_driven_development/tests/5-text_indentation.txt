@@ -1,0 +1,19 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. My name is John? Who are you: Stranger.")
+Hello.
+
+ My name is John?
+
+ Who are you:
+
+ Stranger.
+
+>>> text_indentation("")
+<BLANKLINE>
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
