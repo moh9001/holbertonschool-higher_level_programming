@@ -5,8 +5,6 @@ It adds two integers or floats (which are cast to integers).
 If inputs are not int or float, a TypeError is raised.
 """
 
-import math
-
 
 def add_integer(a, b=98):
     """
@@ -22,9 +20,15 @@ def add_integer(a, b=98):
     Raises:
         TypeError: if a or b are not int or float
     """
-    if not isinstance(a, (int, float)) or not math.isfinite(a):
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if not isinstance(b, (int, float)) or not math.isfinite(b):
+    if not isinstance(b, (int, float)):
+        raise TypeError("b must be an integer")
+
+    # Disallow inf and nan without math module
+    if a != a or a == float('inf') or a == -float('inf'):
+        raise TypeError("a must be an integer")
+    if b != b or b == float('inf') or b == -float('inf'):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
