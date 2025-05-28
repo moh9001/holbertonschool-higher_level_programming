@@ -1,5 +1,5 @@
 """
-This module tests BaseGeometry.integer_validator()
+This module tests BaseGeometry.integer_validator() and area()
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 >>> bg = BaseGeometry()
@@ -21,4 +21,12 @@ ValueError: age must be greater than 0
 Traceback (most recent call last):
     ...
 ValueError: distance must be greater than 0
+
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+
+"""
 
