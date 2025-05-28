@@ -3,6 +3,7 @@
 Class BaseGeometry with an area method that is not implemented.
 """
 
+
 class BaseGeometry:
     """Represents base geometry."""
 

@@ -3,6 +3,7 @@
 Function that checks if object is an instance of a subclass of a_class
 """
 
+
 def inherits_from(obj, a_class):
     """
     Return True if obj is an instance of a subclass of a_class
