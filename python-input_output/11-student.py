@@ -13,11 +13,14 @@ class Student:
 
     def to_json(self, attrs=None):
         """Return a dictionary representation with optional filtering."""
-        if isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
-            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+        if (isinstance(attrs, list) and
+                all(isinstance(attr, str) for attr in attrs)):
+            return {
+                k: getattr(self, k) for k in attrs if hasattr(self, k)
+            }
         return self.__dict__
 
     def reload_from_json(self, json):
-        """Replace all attributes of the student instance with those from json dict."""
+        """Replace all attributes of the student from dictionary"""
         for key, value in json.items():
             setattr(self, key, value)
